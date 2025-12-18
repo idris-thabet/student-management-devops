@@ -4,6 +4,11 @@ tools {
     jdk 'Java17'
 }
 
+stage('Build with Maven') {
+    steps {
+        sh './mvnw clean package -DskipTests'
+    }
+}
 
     environment {
         IMAGE_NAME = "idristhabet/student-management"
