@@ -1,9 +1,9 @@
 pipeline {
     agent any
+tools {
+    jdk 'Java17'
+}
 
-    tools {
-        maven 'Maven'
-    }
 
     environment {
         IMAGE_NAME = "idristhabet/student-management"
@@ -52,10 +52,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ PIPELINE SUCCESS'
+            echo 'PIPELINE SUCCESS'
         }
         failure {
-            echo '❌ PIPELINE FAILED'
+            echo 'PIPELINE FAILED'
         }
     }
 }
