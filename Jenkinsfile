@@ -1,14 +1,12 @@
 pipeline {
     agent any
-tools {
-    jdk 'Java17'
-}
-
-stage('Build with Maven') {
-    steps {
-        sh './mvnw clean package -DskipTests'
+    tools {
+        jdk 'Java17'
+        maven 'Maven'
     }
 }
+
+
 
     environment {
         IMAGE_NAME = "idristhabet/student-management"
